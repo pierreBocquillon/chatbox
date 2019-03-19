@@ -1,0 +1,42 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{    
+    font-size: 62.5%;
+}
+
+body{
+    font-family: sans-serif;
+    font-size: 1.6rem;
+    padding: 6rem;
+}
+
+label, textarea, button{
+    display: block;
+    width: 100%;
+    padding: 1rem;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+}
+header{
+    text-align: center;
+    margin-bottom: 20px;
+}
+#messages{
+    height:500px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+}
+#messages p{
+    background-color: #ad4239;
+    color: white;
+    padding: 5px 15px;
+    width: fit-content;
+    max-width: 75%;
+    border-radius: 5px;
+    margin: 5px;
+}

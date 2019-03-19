@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>ChatBoxe HETIC</title>
+        <link rel="stylesheet" href="./css/main.css">
+        
+    </head>
+    <body>
+        <header>
+            <h1>Try harder's ChatRoom</h1>
+        </header>
+        <main>
+            <section id="messages"></section>
+
+            <section>
+                <form action="#">
+                    <label for="message">Votre message</label>
+                    <textarea name="message" id="message" required minlength="2"></textarea>
+                    <button type="submit">Envoyer</button>
+                </form>     
+            </section>
+        </main>
+
+        <footer>
+        </footer>
+        <script>
+              var txt;
+              var person = prompt("Please enter your name:");
+              if (person == null || person == "") {
+                txt = "/!\\ -- Wrong input ! -- /!\\ ";
+                window.location.reload();
+              } else {
+                me = person ;
+              }
+            </script>
+        <script src="https://cdn.jsdelivr.net/npm/pouchdb@7.0.0/dist/pouchdb.min.js"></script>
+        <script src="./js/app.js"></script>
+    </body>
+</html>
+
+
