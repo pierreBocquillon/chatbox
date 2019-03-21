@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', ()=> {
                     //document.getElementsByClassName(me)[i].style.backgroundColor = "#3a39ad";
                     //document.getElementsByClassName(me)[i].style.alignSelf = "flex-end";
                 }
-                messages.scrollTo(0,document.querySelector("#messages").scrollHeightt);
+                messages.scrollTo(0,document.querySelector("#messages").scrollHeight);
             });
         };
 
