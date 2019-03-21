@@ -10,6 +10,7 @@ font-family: 'Roboto', sans-serif;
     font-family: 'Roboto', sans-serif;
     color: #BBBBBB;
     background-color: #333333;
+    scroll-behavior: smooth;
 }
 
 html{    
@@ -39,7 +40,8 @@ a{
 }
 main{
     height:70%;
-}essages{
+}
+#messages{
     height:100%;
     overflow-y: auto;
     display: flex;
@@ -48,16 +50,50 @@ main{
 #messages p{
     background-color: transparent;
     color: white;
-    padding: 5px 15px;
+    padding: 5px 0px 5px 25px;
     width: 90%;
     margin: 5px;
+    border: #555555 solid 1px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-size: 1.2rem;
+}
+#messages input{
+    border: #555555 solid 1px;
+    border-radius: 5px;
+    height: 30px;
+    outline: none;
+    margin-right: 5px;
+    padding: 0px 15px;
+    text-decoration: none !important;
+}
+#messages input:first-of-type:hover{
+    border: #a2ca94 solid 1px;
+    background-color: #a2ca94;
+    color: #333333;
+    border-radius: 5px;
+}
+#messages input:nth-of-type(2):hover{
+    border: #be7f7f solid 1px;
+    background-color: #be7f7f;
+    color: #333333;
+    border-radius: 5px;
+}
+#messages input:nth-of-type(3):hover{
+    border: #eeeeee solid 1px;
+    background-color: #eeeeee;
+    color: #333333;
+    border-radius: 5px;
 }
 #messages p b {
     font-family: 'Germania One', cursive;
-    font-size: 1.5rem;
+    font-size: 2rem;
     font-weight: 50;
     background-color: transparent;
     color: white;
+    padding-right:20px; 
 }
 hr{
     margin: 10px auto;
@@ -111,6 +147,14 @@ form button:hover{
     width: 15%;
     height : 30px;
     font-size: 1rem;
+}
+.todo{
+    background-color: #BBBBBB !important;
+    color: #333333 !important;
+}
+.todo b{
+    background-color: #BBBBBB !important;
+    color: #333333 !important;
 }
 
 
