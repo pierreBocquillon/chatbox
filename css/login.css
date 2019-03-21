@@ -15,6 +15,9 @@ font-family: 'Roboto', sans-serif;
 html{    
     font-size: 62.5%;
     height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 body{
@@ -22,11 +25,11 @@ body{
     width: 100%;
     max-width: 600px;
     margin: auto;
-    height: 100%;
 }
 header{
     text-align: center;
-    padding: 50px 0px;
+    padding: 0px;
+    margin-bottom: 50px;
 }
 h1{
     font-family: 'Germania One', cursive;
@@ -37,49 +40,15 @@ h1{
 a{
     text-decoration: none;
 }
-main{
-    height:70%;
-}
-#messages{
-    height:100%;
-    overflow-y: auto;
-    display: flex;
-    flex-direction: column;
-}
-#messages p{
-    background-color: transparent;
-    color: white;
-    padding: 5px 15px;
-    width: 90%;
-    margin: 5px;
-}
-#messages p b {
-    font-family: 'Germania One', cursive;
-    font-size: 1.5rem;
-    font-weight: 50;
-    background-color: transparent;
-    color: white;
-}
-hr{
-    margin: 10px auto;
-    width: 400px;
-    border: 0;
-    border-bottom: #555555 solid 1px;
-}
-hr:last-of-type{
-    display: none;
-}
 #form{
     height:10%;
-    position: fixed;
-    bottom: 0;
     width: 100%;
 }
 form{
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+    flex-direction: column;
     justify-content: space-around;
+    align-items: center;
     max-width: 600px;
 }
 form label{
@@ -94,14 +63,16 @@ form input{
     font-size: 1.5rem;
     outline: none;
     color: white;
+    margin-top: 20px;
 }
 form button{
+    margin-top: 50px;
     border: #BBBBBB solid 1px;
     background-color: #333333;
     border-radius: 5px;
-    width: 15%;
+    width: 25%;
     height : 30px;
-    font-size: 1rem;
+    font-size: 2rem;
     outline: none;
 }
 form button:hover{
@@ -109,11 +80,16 @@ form button:hover{
     background-color: #BBBBBB;
     color: #333333;
     border-radius: 5px;
-    width: 15%;
     height : 30px;
-    font-size: 1rem;
 }
-
+a{
+    padding-top: 10px;
+    font-size: 1.3rem;
+}
+a:hover{
+    padding-top: 10px;
+    font-size: 1.3rem;
+}
 
 
 

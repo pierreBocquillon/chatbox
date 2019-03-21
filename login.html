@@ -6,36 +6,31 @@
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>ChatBoxe HETIC</title>
         <link href="https://fonts.googleapis.com/css?family=Germania+One|Roboto" rel="stylesheet">
-        <link rel="stylesheet" href="./css/main.css">
+        <link rel="stylesheet" href="./css/login.css">
         
     </head>
     <body>
         <header>
-            <a href="login.html"><h1>Try harder's ChatRoom</h1></a>
+                <a href="login.html"><h1>Try harder's ChatRoom</h1></a>
         </header>
         <main>
-            <section id="messages"></section>
-
             <section id="form">
                 <form action="#">
                     <!--
                         <label for="message">Votre message :</label>
                     -->
-                    <input type="text" name="message" id="message" required minlength="2" autocomplete="off"></input>
-                    <button type="submit">Envoyer</button>
+                    <input type="text" placeholder="Your Name" name="name" id="name" required minlength="2" autocomplete="off">
+                    <input type="password" placeholder="Your Password" name="password" id="password" required minlength="2" autocomplete="off">
+                    <button type="submit">Log-in</button>
+                    <a href="signin.html">Sign-in</a>
                 </form>     
             </section>
         </main>
 
         <footer>
         </footer>
-        <script>
-            if (document.cookie == "") {
-                window.location = "http://127.0.0.1:8080/login.html";
-            }
-            </script>
         <script src="https://cdn.jsdelivr.net/npm/pouchdb@7.0.0/dist/pouchdb.min.js"></script>
-        <script src="./js/app.js"></script>
+        <script src="./js/login.js"></script>
     </body>
 </html>
 

@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', ()=> {
     Déclaration
     */
         const form = document.querySelector('form');
-        const userMessage = document.querySelector('textarea');
+        const userMessage = document.querySelector('#message');
         const messages = document.querySelector('#messages');
     //
 
@@ -13,10 +13,9 @@ document.addEventListener('DOMContentLoaded', ()=> {
     Gestion de la donnée
     */
         // Définir la BDD PouchDB
-        const pouchDatabase = new PouchDB('hetic-chat');
+        const pouchDatabase = new PouchDB('chat');
 
         // Définir la BDD CouchDB
-        //const couchDatabase = 'https://ldp.dwsapp.io/md4-chat';
         const couchDatabase = 'http://134.209.231.153:5984/chat';
 
         // Création d'une méthode pour synchroniser PouchDB et CouchDB
@@ -31,12 +30,12 @@ document.addEventListener('DOMContentLoaded', ()=> {
         const fetchMessages = () => {
             messages.innerHTML = ''
             pouchDatabase.allDocs( { include_docs: true }, ( err, data ) => {
-                err ? console.error(err) : data.rows.map( item => messages.innerHTML += `<p class="${item.doc.author}"><b>${item.doc.author} :</b><br> ${item.doc.content}</p>` ) ;
+                err ? console.error(err) : data.rows.map( item => messages.innerHTML += `<p class="${item.doc.author}"><b>${item.doc.author} :</b><br> ${item.doc.content}</p><hr>` ) ;
                 
-                for(var i= 0; i < document.getElementsByClassName(me).length; i++)
+                for(var i= 0; i < document.getElementsByClassName(document.cookie).length; i++)
                 {
-                    document.getElementsByClassName(me)[i].style.backgroundColor = "#3a39ad";
-                    document.getElementsByClassName(me)[i].style.alignSelf = "flex-end";
+                    //document.getElementsByClassName(me)[i].style.backgroundColor = "#3a39ad";
+                    //document.getElementsByClassName(me)[i].style.alignSelf = "flex-end";
                     message.value="";
                 }
                 messages.scrollTo(0,document.body.scrollHeight);
@@ -62,7 +61,7 @@ document.addEventListener('DOMContentLoaded', ()=> {
             // Ajouter le message dans la BDD
             pouchDatabase.put({
                 _id: dateNow,
-                author: me,
+                author: document.cookie,
                 content: message,
                 created_at: dateNow
             })
