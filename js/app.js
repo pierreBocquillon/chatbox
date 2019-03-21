@@ -36,9 +36,8 @@ document.addEventListener('DOMContentLoaded', ()=> {
                 {
                     //document.getElementsByClassName(me)[i].style.backgroundColor = "#3a39ad";
                     //document.getElementsByClassName(me)[i].style.alignSelf = "flex-end";
-                    message.value="";
                 }
-                messages.scrollTo(0,document.body.scrollHeight);
+                messages.scrollTo(0,document.querySelector("#messages").scrollHeightt);
             });
         };
 
@@ -56,6 +55,7 @@ document.addEventListener('DOMContentLoaded', ()=> {
     */
         // Fonction pour ajouter un message dasn PouchBD
         const addMessage = ( message ) => {
+            userMessage.value="";
             const dateNow = new Date();
 
             // Ajouter le message dans la BDD
