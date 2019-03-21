@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', ()=> {
                 name: username,
                 password: userpassword,
             })
-            .then( success => window.location = "http://127.0.0.1:8080/login.html" )
+            .then( success => window.location = "/login.html" )
             .catch( err => console.error(err) );
         }
 
