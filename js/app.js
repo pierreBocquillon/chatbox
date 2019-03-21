@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', ()=> {
 
         // Définir la BDD CouchDB
         //const couchDatabase = 'https://ldp.dwsapp.io/md4-chat';
-        const couchDatabase = 'http://142.93.164.245:5984/chat';
+        const couchDatabase = 'http://134.209.231.153:5984/chat';
 
         // Création d'une méthode pour synchroniser PouchDB et CouchDB
         const syncDatabases = () => {
@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', ()=> {
                     document.getElementsByClassName(me)[i].style.alignSelf = "flex-end";
                     message.value="";
                 }
-                messages.scrollTo(0,document.body.scrollHeight);tazertazer
+                messages.scrollTo(0,document.body.scrollHeight);
             });
         };
 
