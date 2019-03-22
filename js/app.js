@@ -33,12 +33,14 @@ document.addEventListener('DOMContentLoaded', ()=> {
                 //data.rows.map( item =>  messages.innerHTML += `<p class="${item.doc.author}"><b>${item.doc.author} :</b><br> ${item.doc.content}</p><hr>` ) ;
                 console.log(data.rows.length);
 
-                var limite = 30;
+                var limite = 100;
 
                 if(data.rows.length > limite){
                     for(var i= data.rows.length-limite; i < data.rows.length;i++){
                         messages.innerHTML += `<p class="${data.rows[i].doc.author}"><b>${data.rows[i].doc.author} :</b><br> ${data.rows[i].doc.content}</p><hr>`;
                     }
+                }else{
+                    data.rows.map( item =>  messages.innerHTML += `<p class="${item.doc.author}"><b>${item.doc.author} :</b><br> ${item.doc.content}</p><hr>` ) ;
                 }
                 for(var i= 0; i < document.getElementsByClassName(document.cookie).length; i++)
                 {
