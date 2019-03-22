@@ -49,7 +49,7 @@ main{
 }
 #messages p{
     background-color: transparent;
-    color: white;
+    color: #555555;
     padding: 5px 0px 5px 25px;
     width: 90%;
     margin: 5px;
@@ -92,7 +92,7 @@ main{
     font-size: 2rem;
     font-weight: 50;
     background-color: transparent;
-    color: white;
+    color: #555555;
     padding-right:20px; 
 }
 hr{

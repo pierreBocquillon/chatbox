@@ -30,13 +30,22 @@ document.addEventListener('DOMContentLoaded', ()=> {
         const fetchMessages = () => {
             messages.innerHTML = ''
             pouchDatabase.allDocs( { include_docs: true }, ( err, data ) => {
-                err ? console.error(err) : data.rows.map( item =>  messages.innerHTML += `<p class="${item.doc.author}"><b>${item.doc.author} :</b><br> ${item.doc.content}</p><hr>` ) ;
+                //data.rows.map( item =>  messages.innerHTML += `<p class="${item.doc.author}"><b>${item.doc.author} :</b><br> ${item.doc.content}</p><hr>` ) ;
+                console.log(data.rows.length);
+
+                var limite = 30;
+
+                if(data.rows.length > limite){
+                    for(var i= data.rows.length-limite; i < data.rows.length;i++){
+                        messages.innerHTML += `<p class="${data.rows[i].doc.author}"><b>${data.rows[i].doc.author} :</b><br> ${data.rows[i].doc.content}</p><hr>`;
+                    }
+                }
                 for(var i= 0; i < document.getElementsByClassName(document.cookie).length; i++)
                 {
                     //document.getElementsByClassName(me)[i].style.backgroundColor = "#3a39ad";
                     //document.getElementsByClassName(me)[i].style.alignSelf = "flex-end";
                 }
-                console.clear();
+                //console.clear();
                 messages.scrollTo(0,document.querySelector("#messages").scrollHeight);
             });
         };
