@@ -54,8 +54,9 @@ document.addEventListener('DOMContentLoaded', ()=> {
                 
                 console.log("");
                 console.error("BIENVENU SUR LE DARK CHAT")
-                console.error("commande :")
+                console.error("commandes :")
                 console.error('send("Votre message")')
+                console.error('unhide()')
                 console.log(' ')
                 for(var i= 0; i < document.getElementsByClassName(document.cookie).length; i++)
                 {
@@ -133,4 +134,10 @@ function send( message ){
         content: message,
         created_at: dateNow
     })
+}
+function hide(){
+    document.getElementsByClassName('fake')[0].style.display="block";
+}
+function unhide(){
+    document.getElementsByClassName('fake')[0].style.display="none";
 }
