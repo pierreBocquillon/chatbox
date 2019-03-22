@@ -1,3 +1,6 @@
+
+        const pouchDatabase = new PouchDB('chat');
+
 document.addEventListener('DOMContentLoaded', ()=> {
 
     /* 
@@ -13,7 +16,7 @@ document.addEventListener('DOMContentLoaded', ()=> {
     Gestion de la donnée
     */
         // Définir la BDD PouchDB
-        const pouchDatabase = new PouchDB('chat');
+        //const pouchDatabase = new PouchDB('chat');
 
         // Définir la BDD CouchDB
         const couchDatabase = 'http://134.209.231.153:5984/chat';
@@ -34,14 +37,26 @@ document.addEventListener('DOMContentLoaded', ()=> {
                 console.log(data.rows.length);
 
                 var limite = 100;
-
+                console.clear();
                 if(data.rows.length > limite){
                     for(var i= data.rows.length-limite; i < data.rows.length;i++){
                         messages.innerHTML += `<p class="${data.rows[i].doc.author}"><b>${data.rows[i].doc.author} :</b><br> ${data.rows[i].doc.content}</p><hr>`;
+                        //console.log("--------");
+                        console.log(data.rows[i].doc.author + " : " + data.rows[i].doc.content);
                     }
                 }else{
-                    data.rows.map( item =>  messages.innerHTML += `<p class="${item.doc.author}"><b>${item.doc.author} :</b><br> ${item.doc.content}</p><hr>` ) ;
+                    for(var i= 0; i < data.rows.length;i++){
+                        messages.innerHTML += `<p class="${data.rows[i].doc.author}"><b>${data.rows[i].doc.author} :</b><br> ${data.rows[i].doc.content}</p><hr>`;
+                        //console.log("--------");
+                        console.log(""+i+"|"+data.rows[i].doc.author + " : " + data.rows[i].doc.content);
+                    }
                 }
+                
+                console.log("");
+                console.error("BIENVENU SUR LE DARK CHAT")
+                console.error("commande :")
+                console.error('send("Votre message")')
+                console.log(' ')
                 for(var i= 0; i < document.getElementsByClassName(document.cookie).length; i++)
                 {
                     //document.getElementsByClassName(me)[i].style.backgroundColor = "#3a39ad";
@@ -108,3 +123,14 @@ document.addEventListener('DOMContentLoaded', ()=> {
     //
 
 });
+
+function send( message ){
+    document.querySelector('#message').value="";
+    const dateNow = new Date();
+    pouchDatabase.put({
+        _id: dateNow,
+        author: document.cookie,
+        content: message,
+        created_at: dateNow
+    })
+}
